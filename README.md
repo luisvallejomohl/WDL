@@ -4,8 +4,7 @@ Usage (in ***HTML5***):
 ```html 
 <SCRIPT SRC=""></SCRIPT>
 <DATABASE>
-\# WDL_code_goes_here \
-</DATABASE>
+# WDL_code_goes_here </DATABASE>
 ```
 All commands in WDL *must* end with a space followed by an Enter.
 ```
