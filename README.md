@@ -18,13 +18,13 @@ All commands in WDL *must* end with a space followed by an Enter.
 ## WDL Quick reference
 Keyword | Definition
 ------- | ----------
-WDL_CREATETABLE | Creates a table
-WDL_PROTECT TABLES | Makes every table undeletable
-JS_EXECUTE | Runs a string of JS code
-WDL_CREATEVARIABLE | Creates a variable
-WDL_CREATECONSTANT | Creates a constant
-WDL_ALTER | Changes the value of a variable
-WDL_DELETETABLE | Deletes a table
-WDL_ADDROW | Adds a row to a table
-WDL_SAVE | Save a database permanently
-WDL_GET | Get a database from storage
+`WDL_CREATETABLE` | Creates a table
+`WDL_PROTECT TABLES` | Makes every table undeletable
+`JS_EXECUTE` | Runs a string of JS code
+`WDL_CREATEVARIABLE` | Creates a variable
+`WDL_CREATECONSTANT` | Creates a constant
+`WDL_ALTER` | Changes the value of a variable
+`WDL_DELETETABLE` | Deletes a table
+`WDL_ADDROW` | Adds a row to a table
+`WDL_SAVE` | Save a database permanently
+`WDL_GET` | Get a database from storage
