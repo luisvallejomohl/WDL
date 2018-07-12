@@ -7,7 +7,7 @@ Usage (in ***HTML***):
 </DATABASE>`
 All commands in WDL *must* end with a space followed by an Enter.
 ```diff
-+Is this text green? It think so
--This might be red.
-
+-WDL_CREATETABLE example WDL_ADDROW groceries~{name:example,type:table}\
++WDL_CREATETABLE example \ 
++WDL_ADDROW groceries~{name:example,type:table}
 ```
