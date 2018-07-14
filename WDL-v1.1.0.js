@@ -59,5 +59,5 @@ for(var item = 0; item < databases.length; item++){
 for(var item = 0; item < M.length; item++){
 	var A = new Function(M[item]);
 	A();
-	M[item] += 'console.warn(\'Array M is deprecated and shouldn\'t be used.\');';
+	M[item] += 'console.warn(\'Array M is deprecated and shouldn\\\'t be used.\');';
 };
