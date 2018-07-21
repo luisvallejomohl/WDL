@@ -82,5 +82,5 @@ var WDL = {
 		fullName:'WDL v1.0.1'
 	},
 	functions:WDLF,
-};</SCR' + 'IPT>';
+};
 WDLF = undefined;
