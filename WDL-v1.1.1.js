@@ -68,8 +68,8 @@ for(var item = 0; item < databases.length; item++){
 };
 var WDLF = [];
 for(var item = 0; item < M.length; item++){
-	var _$_$= new Function(M[item]);
-	WDLF.push(_$_$)
+	var _$_$ = new Function(M[item]);
+	WDLF.push(_$_$);
 	M[item] += 'console.warn(\'Array M is deprecated and shouldn\\\'t be used. Use WDL.functions instead.\');';
 };
 _$_$ = undefined;
