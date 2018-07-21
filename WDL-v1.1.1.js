@@ -70,7 +70,7 @@ var WDLF = [];
 for(var item = 0; item < M.length; item++){
 	var _$_$= new Function(M[item]);
 	WDLF.push(_$_$)
-	M[item] += 'console.warn(\'Array M is deprecated and shouldn\'t be used. Use WDL.functions instead.\');';
+	M[item] += 'console.warn(\'Array M is deprecated and shouldn\\\'t be used. Use WDL.functions instead.\');';
 };
 _$_$ = undefined;
 var WDL = {
@@ -79,7 +79,7 @@ var WDL = {
 		major:1,
 		minor:1,
 		patch:0,
-		fullName:'WDL v1.0.1'
+		fullName:'WDL v1.1.1'
 	},
 	functions:WDLF,
 };
