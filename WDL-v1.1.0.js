@@ -1,4 +1,4 @@
-var a = '';
+var a = 'var protectedDatabases = [];';
 var M = [];
 var databases = document.querySelectorAll('database');
 for(var jtem = 0; jtem < databases.length; jtem++){
@@ -43,9 +43,19 @@ for(var item = 0; item < k.length; item+=2){
 	}else if(k[item] == '\nWDL_PRINT'){
 		a += 'console.log(\'' + afterKeyword + '\');';
 	}else if(k[item] == '\nWDL_DELETE'){
-		a += 'localStorage.removeItem(\'' + afterKeyword + '\');';
+		a += 'if(protectedDatabases.indexOf(\'' + afterKeyword + '\') != -1){\
+localStorage.removeItem(\'' + afterKeyword + '\');\
+}else{\
+throw SyntaxError(\'wd' + afterKeyword + ' is protected\');\
+};';
 	}else if(k[item] == '\nWDL_PROTECT'){
-		a += 'localStorage.removeItem = function(e){};';
+		a += 'protectedDatabases.push(\'' + k[item + 1] + '\');';
+	}else if(k[item] == '\nWDL_IF'){
+		a += 'if(' + afterKeyword + '){';
+	}else if(k[item] == '\nWDL_ENDIF' || k[item] == '\nWDL_ENDLOOP'){
+		a += '};';
+	}else if(k[item] == '\nWDL_LOOP'){
+		a += 'for(var item = 0; item < ' + afterKeyword + '; item++){';
 	}else{
 		console.error(k[item] + ' is not a valid keyword');
 	};
@@ -56,8 +66,21 @@ a = '';
 for(var item = 0; item < databases.length; item++){
 	databases[item].style.display = 'none';
 };
+var WDLF = [];
 for(var item = 0; item < M.length; item++){
-	var A = new Function(M[item]);
-	A();
-	M[item] += 'console.warn(\'Array M is deprecated and shouldn\\\'t be used.\');';
+	var _$_$= new Function(M[item]);
+	WDLF.push(_$_$)
+	M[item] += 'console.warn(\'Array M is deprecated and shouldn\'t be used. Use WDL.functions instead.\');';
 };
+_$_$ = undefined;
+var WDL = {
+	version:{
+		name:'v1.1.0',
+		major:1,
+		minor:1,
+		patch:0,
+		fullName:'WDL v1.0.1';
+	},
+	functions:WDLF,
+};
+WDLF = undefined;
