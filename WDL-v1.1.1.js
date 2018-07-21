@@ -73,15 +73,14 @@ for(var item = 0; item < M.length; item++){
 	M[item] += 'console.warn(\'Array M is deprecated and shouldn\'t be used. Use WDL.functions instead.\');';
 };
 _$_$ = undefined;
-document.querySelector('head').innerHTML += '<SCRIPT>\
-var WDL = {\
-	version:{\
-		name:\'v1.1.0\',\
-		major:1,\
-		minor:1,\
-		patch:0,\
-		fullName:\'WDL v1.0.1\'\
-	},\
-	functions:WDLF,\
+var WDL = {
+	version:{
+		name:'v1.1.0',
+		major:1,
+		minor:1,
+		patch:0,
+		fullName:'WDL v1.0.1'
+	},
+	functions:WDLF,
 };</SCR' + 'IPT>';
 WDLF = undefined;
