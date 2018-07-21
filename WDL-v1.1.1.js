@@ -46,7 +46,7 @@ for(var item = 0; item < k.length; item+=2){
 		a += 'if(protectedDatabases.indexOf(\'' + afterKeyword + '\') != -1){\
 localStorage.removeItem(\'' + afterKeyword + '\');\
 }else{\
-throw SyntaxError(\'wd' + afterKeyword + ' is protected\');\
+throw SyntaxError(\'' + afterKeyword + ' is protected\');\
 };';
 	}else if(k[item] == '\nWDL_PROTECT'){
 		a += 'protectedDatabases.push(\'' + k[item + 1] + '\');';
@@ -73,14 +73,15 @@ for(var item = 0; item < M.length; item++){
 	M[item] += 'console.warn(\'Array M is deprecated and shouldn\'t be used. Use WDL.functions instead.\');';
 };
 _$_$ = undefined;
-var WDL = {
-	version:{
-		name:'v1.1.0',
-		major:1,
-		minor:1,
-		patch:0,
-		fullName:'WDL v1.0.1';
-	},
-	functions:WDLF,
-};
+document.querySelector('head').innerHTML += '<SCRIPT>\
+var WDL = {\
+	version:{\
+		name:\'v1.1.0\',\
+		major:1,\
+		minor:1,\
+		patch:0,\
+		fullName:\'WDL v1.0.1\'\
+	},\
+	functions:WDLF,\
+};</SCR' + 'IPT>';
 WDLF = undefined;
