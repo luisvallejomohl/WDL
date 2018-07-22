@@ -75,10 +75,10 @@ for(var item = 0; item < M.length; item++){
 _$_$ = undefined;
 var WDL = {
 	version:{
-		name:'v1.1.0',
+		name:'v1.1.1',
 		major:1,
 		minor:1,
-		patch:0,
+		patch:1,
 		fullName:'WDL v1.1.1'
 	},
 	functions:WDLF,
