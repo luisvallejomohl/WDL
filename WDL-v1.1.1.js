@@ -77,10 +77,8 @@ for(var jtem = 0; jtem < databases.length; jtem++){
 		};
 	};
 	M.push(a);
-	a = '';
-};
-for(var item = 0; item < databases.length; item++){
-	databases[item].style.display = 'none';
+	a = '';	
+	databases[Jtem].style.display = 'none';
 };
 var WDLF = [];
 for(var item = 0; item < M.length; item++){
