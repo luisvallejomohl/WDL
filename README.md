@@ -47,3 +47,5 @@ Keyword | Definition
 `WDL_ADDROW` | Adds a row to a table
 `WDL_SAVE` | Saves a database permanently
 `WDL_GET` | Gets a database from storage
+`WDL_IF` | Starts an IF condition
+`WDL_ENDIF` | Ends an IF condition
