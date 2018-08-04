@@ -2,11 +2,12 @@
 WDL is a programming language, designed to make it easy to put a database in a webpage "Reducing the pain of putting a database in a webpage", without using Server-side scripting like SQL.
 Usage (in ***HTML5***):
 ```html 
-<SCRIPT SRC=""></SCRIPT>
+<SCRIPT SRC="example.org/wdl_manager.js"></SCRIPT>
 <DATABASE>
-# WDL_code_goes_here </DATABASE>
+# WDL_code_goes_here
+</DATABASE>
 ```
-All commands in WDL *must* end with a space followed by an Enter.
+All commands in WDL MUST end with a space followed by a line break
 ```
  WDL_CREATETABLE example WDL_ADDROW example~{name:example,type:table} # WDL_ADDROW is not a keyword
  ```
@@ -22,7 +23,7 @@ WDL_ADDROW example~{name:example, type:table} # type:table} is not a keyword
 ```
 ```
 WDL_CREATETABLE example 
-WDL_ADDROW example~{name:example,type:table}
+WDL_ADDROW example~{name:example,type:table} # Valid WDL
 ```
 ## WDL Quick reference
 Keyword | Definition
