@@ -1,3 +1,19 @@
+var i = 0;
+const SOURCEDDATABASES = document.querySelectorAll('link[rel="database"]');
+while(i < SOURCEDATABASES.length;){
+	var WDLSource = SOURCEDDATABASES[item].href;
+	XMLHttpRequest 
+		? XMLRequest = new XMLHttpRequest() 
+		: XMLRequest = new ActiveXObject();
+	XMLRequest.open('GET', WDLSource);
+	XMLHttpRequest.onreadystatechange = function(){
+		var newDatabase = document.createElement('DATABASE');
+		newDatabase.innerHTML = this.response;
+		document.querySelector(SOURCEDDATABASES[item].attributes.location.value).appendChild(newDatabase);
+	};
+	XMLRequest.send();
+	i++;
+};
 var a = 'var protectedDatabases = [];';
 var M = [];
 var databases = document.querySelectorAll('database');
@@ -43,12 +59,12 @@ for(var item = 0; item < k.length; item+=2){
 	}else if(k[item] == '\nWDL_PRINT'){
 		a += 'console.log(\'' + afterKeyword + '\');';
 	}else if(k[item] == '\nWDL_DELETE'){
-		a += 'if(protectedDatabases.indexOf(\'' + afterKeyword + '\') != -1){\
-localStorage.removeItem(\'' + afterKeyword + '\');\
-}else{\
-throw SyntaxError(\'' + afterKeyword + ' is protected\');\
-};';
+		a += `if(protectedDatabases.indexOf(` + afterKeyword + `) == -1){
+localStorage.removeItem('` + afterKeyword + `');
+};`
 	}else if(k[item] == '\nWDL_PROTECT'){
+		if(k[item + 1] == '*'){
+			localStorage.__proto__.removeItem = function(){};
 		a += 'protectedDatabases.push(\'' + k[item + 1] + '\');';
 	}else if(k[item] == '\nWDL_IF'){
 		a += 'if(' + afterKeyword + '){';
