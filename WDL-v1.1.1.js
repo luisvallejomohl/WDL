@@ -1,6 +1,6 @@
 var i = 0;
 const SOURCEDDATABASES = document.querySelectorAll('link[rel="database"]');
-while(i < SOURCEDATABASES.length){
+while(i < SOURCEDDATABASES.length){
 	var WDLSource = SOURCEDDATABASES[item].href;
 	XMLHttpRequest 
 		? XMLRequest = new XMLHttpRequest() 
