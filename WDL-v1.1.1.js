@@ -80,7 +80,7 @@ for(var jtem = 0; jtem < databases.length; jtem++){
 		};
 	};
 	M.push(a);
-	a = '';	
+	a = 'var protectedDatabases = [];';	
 	databases[jtem].style.display = 'none';
 };
 var WDLF = [];
