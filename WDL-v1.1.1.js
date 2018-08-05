@@ -5,12 +5,14 @@ while(item < SOURCEDDATABASES.length){
 	XMLHttpRequest 
 		? XMLRequest = new XMLHttpRequest() 
 		: XMLRequest = new ActiveXObject();
-	XMLRequest.open('GET', WDLSource);
 	XMLHttpRequest.onreadystatechange = function(){
-		var newDatabase = document.createElement('DATABASE');
-		newDatabase.innerHTML = this.response;
-		document.querySelector(SOURCEDDATABASES[item].attributes.location.value).appendChild(newDatabase);
+		if(this.readyState == 4 && this.status == 200){
+			var newDatabase = document.createElement('DATABASE');
+			newDatabase.innerHTML = this.response;
+			document.querySelector(SOURCEDDATABASES[item].attributes.location.value).appendChild(newDatabase);
+		};
 	};
+	XMLRequest.open('GET', WDLSource);
 	XMLRequest.send();
 	item++;
 };
