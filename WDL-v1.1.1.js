@@ -1,6 +1,6 @@
-var i = 0;
+var item = 0;
 const SOURCEDDATABASES = document.querySelectorAll('link[rel="database"]');
-while(i < SOURCEDDATABASES.length){
+while(item < SOURCEDDATABASES.length){
 	var WDLSource = SOURCEDDATABASES[item].href;
 	XMLHttpRequest 
 		? XMLRequest = new XMLHttpRequest() 
@@ -12,7 +12,7 @@ while(i < SOURCEDDATABASES.length){
 		document.querySelector(SOURCEDDATABASES[item].attributes.location.value).appendChild(newDatabase);
 	};
 	XMLRequest.send();
-	i++;
+	item++;
 };
 var a = 'var protectedDatabases = [];';
 var M = [];
