@@ -65,7 +65,9 @@ for(var jtem = 0; jtem < databases.length; jtem++){
 		}else if(k[item] == '\nWDL_PROTECT'){
 			if(k[item + 1] == '*'){
 				localStorage.__proto__.removeItem = function(){};
-			a += 'protectedDatabases.push(\'' + k[item + 1] + '\');';
+			}else{
+				a += 'protectedDatabases.push(\'' + k[item + 1] + '\');';
+			};
 		}else if(k[item] == '\nWDL_IF'){
 			a += 'if(' + afterKeyword + '){';
 		}else if(k[item] == '\nWDL_ENDIF' || k[item] == '\nWDL_ENDLOOP'){
