@@ -5,14 +5,15 @@ while(item < SOURCEDDATABASES.length){
 	XMLHttpRequest 
 		? XMLRequest = new XMLHttpRequest() 
 		: XMLRequest = new ActiveXObject();
-	var newDatabaseLocation = SOURCEDDATABASES[item].attributes.location.value;
+	/*var newDatabaseLocation = SOURCEDDATABASES[item].attributes.location.value;
 	XMLRequest.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
 			document.querySelector(newDatabaseLocation).innerHTML += '<DATABASE>\n' + XMLRequest.responseText + '</DATABASE>'
 		};
-	};
-	XMLRequest.open('GET', WDLSource);
+	};*/
+	XMLRequest.open('GET', WDLSource, false);
 	XMLRequest.send();
+	document.querySelector(SOURCEDDATABASES[item].attributes.location.value).innerHTML += '<DATABASE>\n' + XMLRequest.responseText + '</DATABASE>'
 	item++;
 };
 var a = 'var protectedDatabases = [];';
