@@ -8,7 +8,7 @@ while(item < SOURCEDDATABASES.length){
 	XMLHttpRequest.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
 			var newDatabase = document.createElement('database');
-			newDatabase.innerHTML = this.response;
+			newDatabase.innerHTML = this.responseText;
 			document.querySelector(SOURCEDDATABASES[item].attributes.location.value).appendChild(newDatabase);
 		};
 	};
