@@ -8,9 +8,7 @@ while(item < SOURCEDDATABASES.length){
 	var newDatabaseLocation = SOURCEDDATABASES[item].attributes.location.value;
 	XMLRequest.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
-			var newDatabase = document.createElement('database');
-			newDatabase.innerHTML = this.responseText;
-			document.querySelector(newDatabaseLocation).appendChild(newDatabase);
+			document.querySelector(newDatabaseLocation).innerHTML += '<DATABASE>\n' + XMLRequest.responseText + '</DATABASE>'
 		};
 	};
 	XMLRequest.open('GET', WDLSource);
