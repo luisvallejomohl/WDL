@@ -10,8 +10,7 @@ while(item < SOURCEDDATABASES.length){
 		if(this.readyState == 4 && this.status == 200){
 			var newDatabase = document.createElement('database');
 			newDatabase.innerHTML = this.responseText;
-			//document.querySelector(SOURCEDDATABASES[item].attributes.location.value).appendChild(newDatabase);
-			console.log(newDatabaseLocation);
+			document.querySelector(newDatabaseLocation).appendChild(newDatabase);
 		};
 	};
 	XMLRequest.open('GET', WDLSource);
