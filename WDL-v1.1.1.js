@@ -44,7 +44,7 @@ for(var jtem = 0; jtem < databases.length; jtem++){
 			'const ' + afterKeyword.split('~')[0] + ' = ' + afterKeyword.split('~')[1] + ';';
 		}else if(k[item] == '\nWDL_CREATEVARIABLE'){
 			if(typeof window[afterKeyword] === 'undefined'){
-				a += 'var ' + afterKeyword.split('~')[0] + ' = ' + afterKeyword.split('~')[1] + ';';
+				a += 'window.' + afterKeyword.split('~')[0] + ' = ' + afterKeyword.split('~')[1] + ';';
 			}else{
 				console.error(afterKeyword.split('~')[0] + ' is defined. Use WDL_ALTER instead.');
 			};
