@@ -2,7 +2,7 @@
 WDL is a programming language, designed to make it easy to put a database in a webpage "Reducing the pain of putting a database in a webpage", without using Server-side scripting like SQL.
 Usage (in ***HTML5***):
 ```html 
-<SCRIPT SRC="example.org/wdl_manager.js"></SCRIPT>
+<SCRIPT SRC="https://example.org/WDL_manager.js"></SCRIPT>
 <DATABASE>
 # WDL_code_goes_here
 </DATABASE>
@@ -38,7 +38,7 @@ WDL_ADDROW example~{name:example,type:table} # Valid WDL
 Keyword | Definition
 ------- | ----------
 `WDL_CREATETABLE` | Creates a table
-`WDL_PROTECT TABLES` | Makes every table undeletable
+`WDL_PROTECT *` | Makes every table undeletable
 `JS_EXECUTE` | Runs a string of JS code
 `WDL_CREATEVARIABLE` | Creates a variable
 `WDL_CREATECONSTANT` | Creates a constant
@@ -49,3 +49,4 @@ Keyword | Definition
 `WDL_GET` | Gets a database from storage
 `WDL_IF` | Starts an IF condition
 `WDL_ENDIF` | Ends an IF condition
+`WDL_UNDEFINED` | A special value; the WDL equivalent of JS `undefined`.
