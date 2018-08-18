@@ -65,7 +65,7 @@ for(var jtem = 0; jtem < databases.length; jtem++){
 				localStorage.removeItem(\'' + afterKeyword + '\');\
 			};';
 		}else if(k[item] == '\nWDL_PROTECT'){
-			if(k[item + 1] == '*'){
+			if(k[item + 1] == '*' || k[item + 1] == 'TABLES'){
 				localStorage.__proto__.removeItem = function(){};
 			}else{
 				a += 'protectedDatabases.push(\'' + k[item + 1] + '\');';
@@ -84,6 +84,7 @@ for(var jtem = 0; jtem < databases.length; jtem++){
 	a = 'var protectedDatabases = [];';	
 	databases[jtem].style.display = 'none';
 };
+const WDL_UNDEFINED = undefined;
 var WDLF = [];
 for(var item = 0; item < M.length; item++){
 	var _$_$ = new Function(M[item]);
@@ -93,11 +94,11 @@ for(var item = 0; item < M.length; item++){
 _$_$ = undefined;
 var WDL = {
 	version:{
-		name:'v1.1.1',
+		name:'v1.1.2',
 		major:1,
 		minor:1,
-		patch:1,
-		fullName:'WDL v1.1.1'
+		patch:2,
+		fullName:'WDL v1.1.2'
 	},
 	functions:WDLF,
 };
