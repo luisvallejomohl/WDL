@@ -156,7 +156,14 @@ function WDL_JOIN(){
             if(arguments[item].hasOwnProperty(key))
                 arguments[0][key] = arguments[item][key];
     return arguments[0];
-}
+};
+function WDL_SUM(table, property, condition){
+	for(var item = 0; item < table.length; item++){
+		if(condition){
+			item == 0 ? window.table = table[item][property] : window.table += table[item][property]
+		};
+	};
+};
 var WDLF = [];
 for(var item = 0; item < M.length; item++){
 	var _$_$ = new Function(M[item]);
@@ -166,11 +173,11 @@ for(var item = 0; item < M.length; item++){
 _$_$ = undefined;
 var WDL = {
 	version:{
-		name:'v1.1.2',
+		name:'v1.1.5',
 		major:1,
 		minor:1,
-		patch:2,
-		fullName:'WDL v1.1.2'
+		patch:5,
+		fullName:'WDL v1.1.5'
 	},
 	functions:WDLF,
 };
