@@ -63,6 +63,8 @@ for(var jtem = 0; jtem < databases.length; jtem++){
 		}else if(k[item] == '\nWDL_DELETE'){
 			a += 'if(protectedDatabases.indexOf(\'' + afterKeyword + '\') == -1){\
 				localStorage.removeItem(\'' + afterKeyword + '\');\
+			}else{\
+				console.warn(\'' + afterKeyword + ' is protected);\
 			};';
 		}else if(k[item] == '\nWDL_PROTECT'){
 			if(k[item + 1] == '*' || k[item + 1] == 'TABLES'){
@@ -76,8 +78,10 @@ for(var jtem = 0; jtem < databases.length; jtem++){
 			a += '};';
 		}else if(k[item] == '\nWDL_LOOP'){
 			a += 'for(var item = 0; item < ' + afterKeyword + '; item++){';
+		}else if(k[item] == '\nWDL_CALLWITH'){
+			a += afterKeyword.split('~')[0] + '(' + afterKeyword.split('~')[1] + ');'
 		}else{
-			console.error(k[item] + ' is not a valid keyword');
+			console.warn(k[item] + ' is not a valid keyword');
 		};
 	};
 	M.push(a);
