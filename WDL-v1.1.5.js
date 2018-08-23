@@ -182,11 +182,11 @@ for(var item = 0; item < M.length; item++){
 _$_$ = undefined;
 var WDL = {
 	version:{
-		name:'v1.1.6',
+		name:'v1.1.5',
 		major:1,
 		minor:1,
 		patch:6,
-		fullName:'WDL v1.1.6'
+		fullName:'WDL v1.1.5'
 	},
 	functions:WDLF,
 };
