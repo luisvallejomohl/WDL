@@ -1,4 +1,11 @@
 var item = 0;
+function WDL_ISCONSTANT(name){
+	if(window[name] == eval(name)){
+		return false;
+	}else{
+		return true;
+	};
+};
 const SOURCEDDATABASES = document.querySelectorAll('link[rel="database"]');
 while(item < SOURCEDDATABASES.length){
 	var WDLSource = SOURCEDDATABASES[item].href;
@@ -49,7 +56,8 @@ for(var jtem = 0; jtem < databases.length; jtem++){
 		}else if(k[item] == '\nWDL_SELECTFROM'){
 			a += 'var selectFromReturnValue = []; for(var item = 0; item < ' + afterKeyword.split('~')[0] + '.length; item++){if(' + afterKeyword.split('~')[2] + '){selectFromReturnValue.push(' + afterKeyword.split('~')[0] + '.' + afterKeywprd.split('~')[1] + ')}}'
 		}else if(k[item] == '\nWDL_ALTER'){
-			 a += afterKeyword.split('~')[0] + ' = ' + afterKeyword.split('~')[1] + ';';
+			a += 'if(WDL_ISCONSTANT(\'afterKeyword.split('~')[0]\')){console.warn(\'WDL: ' + afterKeyword.split('~')[0] + ' is a constant. Declaration dropped.\')}else{';
+			 a += afterKeyword.split('~')[0] + ' = ' + afterKeyword.split('~')[1] + '}';
 		}else if(k[item] == '\nWDL_SAVE'){
 			a += 'localStorage.setItem(\'' + afterKeyword + '\', JSON.stringify(' + afterKeyword + '));';
 		}else if(k[item] == '\nWDL_ADDROW'){
@@ -81,7 +89,7 @@ for(var jtem = 0; jtem < databases.length; jtem++){
 		}else if(k[item] == '\nWDL_CALLWITH'){
 			a += afterKeyword.split('~')[0] + '(' + afterKeyword.split('~')[1] + ');'
 		}else{
-			console.warn(k[item] + ' is not a valid keyword');
+			console.warn('WDL: Mysterious keyword ' + k[item] + '. Command ignored.');
 		};
 	};
 	M.push(a);
@@ -163,6 +171,7 @@ function WDL_SUM(table, property, condition){
 			item == 0 ? window.table = table[item][property] : window.table += table[item][property]
 		};
 	};
+	return window.table
 };
 var WDLF = [];
 for(var item = 0; item < M.length; item++){
@@ -173,11 +182,11 @@ for(var item = 0; item < M.length; item++){
 _$_$ = undefined;
 var WDL = {
 	version:{
-		name:'v1.1.5',
+		name:'v1.1.6',
 		major:1,
 		minor:1,
-		patch:5,
-		fullName:'WDL v1.1.5'
+		patch:6,
+		fullName:'WDL v1.1.6'
 	},
 	functions:WDLF,
 };
