@@ -56,7 +56,7 @@ for(var jtem = 0; jtem < databases.length; jtem++){
 		}else if(k[item] == '\nWDL_SELECTFROM'){
 			a += 'var selectFromReturnValue = []; for(var item = 0; item < ' + afterKeyword.split('~')[0] + '.length; item++){if(' + afterKeyword.split('~')[2] + '){selectFromReturnValue.push(' + afterKeyword.split('~')[0] + '.' + afterKeywprd.split('~')[1] + ')}}'
 		}else if(k[item] == '\nWDL_ALTER'){
-			a += 'if(WDL_ISCONSTANT(\'afterKeyword.split('~')[0]\')){console.warn(\'WDL: ' + afterKeyword.split('~')[0] + ' is a constant. Declaration dropped.\')}else{';
+			a += 'if(WDL_ISCONSTANT(\'afterKeyword.split(\'~\')[0]\')){console.warn(\'WDL: ' + afterKeyword.split('~')[0] + ' is a constant. Declaration dropped.\')}else{';
 			 a += afterKeyword.split('~')[0] + ' = ' + afterKeyword.split('~')[1] + '}';
 		}else if(k[item] == '\nWDL_SAVE'){
 			a += 'localStorage.setItem(\'' + afterKeyword + '\', JSON.stringify(' + afterKeyword + '));';
