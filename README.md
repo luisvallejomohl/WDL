@@ -52,6 +52,6 @@ WDL_ADDROW example~{name:example,type:table} # Valid WDL
   <TR><TD>WDL_GET </TD><TD> Gets a database from storage</TD></TR>
   <TR><TD>WDL_IF </TD><TD> Starts an IF condition</TD></TR>
   <TR><TD>WDL_ENDIF </TD><TD> Ends an IF condition</TD></TR>
-  <TR><TD>WDL_UNDEFINED </TD><TD> A special value; the WDL equivalent of JS `undefined`.
+  <TR><TD>WDL_UNDEFINED </TD><TD> A special value; the WDL equivalent of JS undefined</TD></TR>
  </TBODY>
  </TABLE>
