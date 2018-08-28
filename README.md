@@ -1,7 +1,7 @@
 # WDL
 WDL is a programming language, designed to make it easy to put a database in a webpage "Reducing the pain of putting a database in a webpage", without using Server-side scripting like SQL.
 Usage (in ***HTML5***):
-```html 
+```HTML 
 <SCRIPT SRC="https://example.org/WDL_manager.js"></SCRIPT>
 <DATABASE>
 # WDL_code_goes_here
@@ -35,18 +35,23 @@ WDL_CREATETABLE example # Creates_the_table_called_example
 WDL_ADDROW example~{name:example,type:table} # Valid WDL
 ```
 ## WDL Quick reference
-Keyword | Definition
-------- | ----------
-`WDL_CREATETABLE` | Creates a table
-`WDL_PROTECT *` | Makes every table undeletable
-`JS_EXECUTE` | Runs a string of JS code
-`WDL_CREATEVARIABLE` | Creates a variable
-`WDL_CREATECONSTANT` | Creates a constant
-`WDL_ALTER` | Changes the value of a variable
-`WDL_DELETETABLE` | Deletes a table
-`WDL_ADDROW` | Adds a row to a table
-`WDL_SAVE` | Saves a database permanently
-`WDL_GET` | Gets a database from storage
-`WDL_IF` | Starts an IF condition
-`WDL_ENDIF` | Ends an IF condition
-`WDL_UNDEFINED` | A special value; the WDL equivalent of JS `undefined`.
+<TABLE>
+<THEAD>
+ <TH>Keyword</TH><TH>Definition</TH><TH>Status</TH>
+ </THEAD>
+ <TBODY>
+  <TR><TD>WDL_CREATETABLE </TD><TD> Creates a table</TD></TR>
+  <TR><TD>WDL_PROTECT * </TD><TD> Makes every table undeletable</TD></TR>
+  <TR><TD>JS_EXECUTE</TD><TD> Runs a string of JS code</TD></TR>
+  <TR><TD>WDL_CREATEVARIABLE </TD><TD> Creates a variable</TD></TR>
+  <TR><TD>WDL_CREATECONSTANT </TD><TD> Creates a constant</TD></TR>
+  <TR><TD>WDL_ALTER </TD><TD> Changes the value of a variable</TD></TR>
+  <TR><TD>WDL_DELETETABLE</TD><TD>Deletes a table</TD></TR>
+  <TR><TD>WDL_ADDROW</TD><TD> Adds a row to a table</TD></TR>
+  <TR><TD>WDL_SAVE </TD><TD> Saves a database permanently</TD></TR>
+  <TR><TD>WDL_GET </TD><TD> Gets a database from storage</TD></TR>
+  <TR><TD>WDL_IF </TD><TD> Starts an IF condition</TD></TR>
+  <TR><TD>WDL_ENDIF </TD><TD> Ends an IF condition</TD></TR>
+  <TR><TD>WDL_UNDEFINED </TD><TD> A special value; the WDL equivalent of JS `undefined`.
+ </TBODY>
+ </TABLE>
