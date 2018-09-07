@@ -10,7 +10,7 @@ function WDL_ADDROW(db_name, row){
   eval(db_name + ' = ' + row);
 }
 function WDL_REMOVEROW(db_name, row){
-  eval(db_name + '[' + String(row) + ']' + ' = undefined);
+  eval(db_name + '[' + String(row) + ']' + ' = undefined');
 }
 function WDL_SAVE(db_name){
   localStorage[db_name] = JSON.stringify(window[db_name]);
