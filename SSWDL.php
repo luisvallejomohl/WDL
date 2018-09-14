@@ -1,7 +1,7 @@
 <?php
 /***************************
  * Server Side Webpage Database Language (SSWDL)
- * GAPL v3.0
+ * MPL v2.0
  **************************/
 $item = 0;
 function WDL_ISCONSTANT($name){
