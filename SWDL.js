@@ -1,6 +1,6 @@
 /********************
  * javaScript Webpage Database Library (SWDL)
- * GAPL v3.0
+ * MPL v2.0
 ********************/
 var protectedDatabases = [];
 function WDL_CREATETABLE(db_name){
