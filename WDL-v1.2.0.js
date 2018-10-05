@@ -11,7 +11,7 @@ while(item < SOURCEDDATABASES.length){
 	var WDLSource = SOURCEDDATABASES[item].href;
 	XMLHttpRequest 
 		? XMLRequest = new XMLHttpRequest() 
-		: XMLRequest = new ActiveXObject();
+		: XMLRequest = new ActiveXObject('Microsoft.XMLHTTP');
 	XMLRequest.open('GET', WDLSource, false);
 	XMLRequest.send();
 	document.querySelector(SOURCEDDATABASES[item].attributes.location.value).innerHTML += '<DATABASE>\n' + XMLRequest.responseText + '</DATABASE>'
