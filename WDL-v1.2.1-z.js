@@ -192,7 +192,7 @@ var WDL = {
 		major:1,
 		minor:2,
 		patch:1,
-		pre: 'z'
+		pre: 'z',
 		fullName:'WDL v1.2.1-z',
 	},
 	functions:WDLF,
