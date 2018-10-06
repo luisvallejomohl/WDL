@@ -184,16 +184,16 @@ var WDL = {
 	version:{
 		get name(){
 			console.warn('WDL.version.name is deprecated. Use WDL.version.toString() instead.');
-			return 'v1.2.1-z';
+			return 'v1.2.1-y';
 		},
 		toString:function(){
-			return 'v1.2.1-z';
+			return 'v1.2.1-y';
 		},
 		major:1,
 		minor:2,
 		patch:1,
-		pre: 'z',
-		fullName:'WDL v1.2.1-z',
+		pre: 'y',
+		fullName:'WDL v1.2.1-y',
 	},
 	functions:WDLF,
 };
