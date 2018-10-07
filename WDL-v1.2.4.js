@@ -104,7 +104,7 @@ const WDL_TRUE = true;
 const WDL_FALSE = false;
 const WDL_DATE = new Date();
 function WDL_ROOT(a, b){
-	return Math.pow(a, 1/b);
+	return Math.sqrt(a, b);
 };
 function WDL_COS(a){
 	return Math.cos(a);
