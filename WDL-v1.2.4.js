@@ -104,7 +104,7 @@ const WDL_TRUE = true;
 const WDL_FALSE = false;
 const WDL_DATE = new Date();
 function WDL_ROOT(a, b){
-	return Math.pow(a, b);
+	return Math.sqrt(a, b);
 };
 function WDL_COS(a){
 	return Math.cos(a);
@@ -184,15 +184,15 @@ var WDL = {
 	version:{
 		get name(){
 			console.warn('WDL.version.name is deprecated. Use WDL.version.toString() instead.');
-			return 'v1.2.3';
+			return 'v1.2.4';
 		},
 		toString:function(){
-			return 'v1.2.3';
+			return 'v1.2.4';
 		},
 		major:1,
 		minor:2,
 		patch:3,
-		fullName:'WDL v1.2.3',
+		fullName:'WDL v1.2.4',
 	},
 	functions:WDLF,
 };
