@@ -191,7 +191,7 @@ var WDL = {
 		},
 		major:1,
 		minor:2,
-		patch:3,
+		patch:4, 
 		fullName:'WDL v1.2.4',
 	},
 	functions:WDLF,
